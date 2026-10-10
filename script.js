@@ -11,7 +11,7 @@
  * 4. Configure PostHog analytics in index.html.
  */
 
-const REGISTRATION_URL = "";
+const REGISTRATION_URL = "https://docs.google.com/forms/d/e/1FAIpQLSfh5QrqrlXS-CanpJy_jGDXaZ7OkT1O3wv4Y9SyFaUbkwdU6Q/viewform";
 const Q8_KEY_CONFIRMED = false;
 const QUIZ_VERSION = "1.0.0";
 
@@ -145,7 +145,7 @@ const questions = [
     imageLabel: "IMAGE 05 · INSPIRATION",
     imageAlt: "Radiographie thoracique de face en inspiration chez un enfant",
     title: "Quel examen complémentaire permet de confirmer le diagnostic et de préciser la localisation du corps étranger ?",
-    prompt: "Un enfant est admis aux urgences après un syndrome de pénétration, marqué par un accès brutal de suffocation d'installation soudaine.\n\nLa radiographie thoracique de face en inspiration montre une hyperclarté pulmonaire gauche par rapport au côté droit, faisant suspecter un piégeage aérien secondaire à un corps étranger bronchique.",
+    prompt: "Un enfant est admis aux urgences après un syndrome de pénétration, marqué par un accès brutal de suffocation d'installation soudaine.",
     choices: [
       { letter: "A", text: "Radiographie thoracique en expiration." },
       { letter: "B", text: "Scanner thoracique systématique en première intention." },
@@ -601,6 +601,7 @@ function renderResults(score) {
     && !REGISTRATION_URL.includes("REPLACE_WITH")
   ) {
     registrationLink.href = REGISTRATION_URL;
+    registrationLink.textContent = "S'inscrire au tutorat ↗";
     registrationLink.hidden = false;
   } else {
     registrationLink.hidden = true;
